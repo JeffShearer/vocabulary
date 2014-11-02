@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+$body-bg: #ecf0f1;
+$font-family-sans-serif:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$navbar-default-bg: white;
+$navbar-height: 45px;
+
+$brand-primary: #f39c12;
+$jumbotron-bg: white;
+@import 'bootstrap';
+
+.center {
+     text-align: center;
+}
+
+.navbar-brand {
+     font-weight: bold;
+}
