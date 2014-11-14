@@ -13,11 +13,28 @@
     
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
+        
+        <% if user_signed_in? %>
+          <li>
+            <button type="button" class="btn btn-default btn-sm navbar-btn">
+              <%= link_to new_pin_path do %>
+                <span class="glyphicon glyphicon-plus"></span> New Pin
+              <% end %>
+            </button>
+          </li>
+        <% end %>
         <li><%= link_to "About", about_path %></li> 
         <% if user_signed_in? %>
-        <li><%= link_to 'New Pin', new_pin_path %></li>
-          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <span class="glyphicon glyphicon-user"></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="glyphicon glyphicon-off"></span>
+            <% end %>
+          </li>
         <% else %>
         <li><%= link_to "Sign in", new_user_session_path %></li>
         <% end %>
