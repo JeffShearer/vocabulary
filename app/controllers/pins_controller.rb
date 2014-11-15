@@ -5,7 +5,7 @@ class PinsController < ApplicationController
 
 # This shows the list of pins (read all)
   def index
-    @pins = Pin.all
+    @pins = Pin.all.order("created_at DESC")
   end
 
 # This shows the pin
